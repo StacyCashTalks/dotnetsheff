@@ -32,7 +32,7 @@ jobs:
 
       - name: Set DNS Record
         id: set-dns-record
-        run: Porkbun.DNS/Porkbun.DNS.MakingApp -s ${{ secrets.PORKBUN_KEY }} -k ${{ secrets.PORKBUN_SECRET }} -d $SubDomain -h ${{ steps.get-hostname.outputs.SWA_HOSTNAME }}
+        run: Porkbun.DNS/Porkbun.DNS.MakingApp -k ${{ secrets.PORKBUN_KEY }} -s ${{ secrets.PORKBUN_SECRET }} -d $SubDomain -h ${{ steps.get-hostname.outputs.SWA_HOSTNAME }}
 
       - name: Set Custom Domain
         id: set-swa-custom-domain
