@@ -30,9 +30,9 @@ jobs:
             echo $SWA_HOSTNAME
             echo SWA_HOSTNAME=$SWA_HOSTNAME >> $GITHUB_OUTPUT
 
-      # - name: Set DNS Record
-      #   id: set-dns-record
-      #   run: Porkbun.DNS/Porkbun.DNS.MakingApp -k ${{ secrets.PORKBUN_KEY }} -s ${{ secrets.PORKBUN_SECRET }} -d $SubDomain -h ${{ steps.get-hostname.outputs.SWA_HOSTNAME }}
+      - name: Set DNS Record
+        id: set-dns-record
+        run: Porkbun.DNS/Porkbun.DNS.MakingApp -k ${{ secrets.PORKBUN_KEY }} -s ${{ secrets.PORKBUN_SECRET }} -d $SubDomain -h ${{ steps.get-hostname.outputs.SWA_HOSTNAME }}
 
       - name: Set Custom Domain
         id: set-swa-custom-domain
